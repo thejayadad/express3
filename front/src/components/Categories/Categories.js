@@ -50,17 +50,25 @@ const Categories = () => {
   return (
     <div>
         <h3>Categories</h3>
-        <div className='categories'>
-
+        <section className='tags'>
+        <div className='container'>
         {categories.map((category) => (
-              <span
+
+             <ul className='grid-list'>
+                <li>
+
+                <span
+                className='tag-btn'
                 key={crypto.randomUUID()}
                 onClick={() => setActiveCategory(prev => category)}
               >
                 {category}
               </span>
+                </li>
+             </ul>
             ))}
-        </div>
+            </div>
+        </section>
         {filteredBlogs?.length > 0 ?
             <div >
               {filteredBlogs?.map((blog) => (

@@ -7,12 +7,14 @@ import { useSelector } from 'react-redux';
 import Create from "./pages/create/Create";
 import BlogDetails from "./pages/blogdetails/BlogDetails";
 import UpdateBlog from "./pages/updateBlog/UpdateBlog";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   const { user } = useSelector((state) => state.auth)
 
   return (
-    <div >
+    <div className="app" >
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register"element={!user ? <Register /> : <Navigate to='/' />} />
